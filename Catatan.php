@@ -1,21 +1,6 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-
 <?php
 session_start();
-if (empty($_SESSION['nik'])) { ?>
+if (empty($_SESSION['nim'])) { ?>
     <script type="text/javascript">
         alert('Anda Belum Login');
         window.location.assign('index.php');
@@ -28,10 +13,10 @@ if (empty($_SESSION['nik'])) { ?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/Pesawat.png">
-    <link rel="icon" type="image/png" href="Assets_Tamplate/img/Pesawat.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/logo.jpeg">
+    <link rel="icon" type="image/png" href="Assets_Tamplate/img/logo.jpeg">
     <title>
-        Catatan Penerbangan
+        Catatan Kuesioner
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -52,7 +37,7 @@ if (empty($_SESSION['nik'])) { ?>
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href=" #">
                 <span class="ms-1 font-weight-bold">
-                    <center> Aplikasi Latravel</center>
+                    <center> Kuesioner </center>
                 </span>
             </a>
         </div>
@@ -75,7 +60,7 @@ if (empty($_SESSION['nik'])) { ?>
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Catatan Penerbangan</span>
+                        <span class="nav-link-text ms-1">Catatan Kuesioner</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -83,14 +68,14 @@ if (empty($_SESSION['nik'])) { ?>
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Input Catatan Penerbangan</span>
+                        <span class="nav-link-text ms-1">Input Catatan Kuesioner</span>
                     </a>
                 </li>
                 <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Keluar Aplikasi</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="logout.php">
+                    <a class="nav-link " href="logout.php" onclick="return confirm('Apakah anda yakin keluar?')">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-collection text-info text-sm opacity-10"></i>
                         </div>
@@ -106,14 +91,16 @@ if (empty($_SESSION['nik'])) { ?>
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Catatan Penerbangan</li>
+                        <li class="breadcrumb-item text-sm text-white"><a class="text-white" href="user.php">Dashboard</a></li>
+                        <li class="breadcrumb-item text-sm text-white"><a class="text-white" href="input_catatan.php">Input</a></li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Catatan</li>
+                        <li class="breadcrumb-item text-sm text-white"><a class="text-white" href="logout.php" onclick="return confirm('Apakah anda yakin keluar?')">Logout</a></li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Catatan Penerbangan</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">Catatan Kuesioner</h6>
                 </nav>
                 <li class="nav-item px-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0">
-                        <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        <img src="Assets_Tamplate/img/logo.jpeg" height="55" width="55" style="border-radius: 50%;" alt="teguh bagmar">
                     </a>
                 </li>
             </div>
@@ -134,16 +121,18 @@ if (empty($_SESSION['nik'])) { ?>
                                         <tr>
                                             <th onclick="sort(1)">No</th>
                                             <th onclick="sort(2)">Tanggal</th>
-                                            <th onclick="sort(3)">Jam</th>
-                                            <th onclick="sort(4)">Lokasi</th>
-                                            <th onclick="sort(5)">Suhu</th>
+                                            <th onclick="sort(3)">Pertanyaan 1</th>
+                                            <th onclick="sort(4)">Pertanyaan 2</th>
+                                            <th onclick="sort(5)">Pertanyaan 3</th>
+                                            <th onclick="sort(6)">Pertanyaan 4</th>
+                                            <th onclick="sort(7)">Kritik & saran</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $no = 1;
                                         $data = file('catatan.txt', FILE_IGNORE_NEW_LINES);
-                                        $user = $_SESSION['nik'] . "|" . $_SESSION['nama_lengkap'];
+                                        $user = $_SESSION['nim'] . "|" . $_SESSION['nama_lengkap'];
                                         foreach ($data as $value) {
                                             $pecah = explode("|", $value);
                                             @$key = $pecah['0'] . "|" . $pecah['1'];
@@ -155,6 +144,8 @@ if (empty($_SESSION['nik'])) { ?>
                                                     <td><?= $pecah['3']; ?></td>
                                                     <td><?= $pecah['4']; ?></td>
                                                     <td><?= $pecah['5']; ?></td>
+                                                    <td><?= $pecah['6']; ?></td>
+                                                    <td><?= $pecah['7']; ?></td>
                                                 </tr>
                                         <?php }
                                         } ?>
@@ -174,9 +165,7 @@ if (empty($_SESSION['nik'])) { ?>
                                 © <script>
                                     document.write(new Date().getFullYear())
                                 </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Start Bootstrap</a>
-                                for a better web. Design By Ananda.
+                                made with <i class="fa fa-heart"></i> by Teguh Bagas.
                             </div>
                         </div>
                     </div>
@@ -222,10 +211,12 @@ if (empty($_SESSION['nik'])) { ?>
                     <p class="text-sm">Ada 2 Macam Pilihan</p>
                 </div>
                 <div class="d-flex">
-                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">Light</button>
                     <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
                 </div>
-                <p class="text-sm d-xl-none d-block mt-2">Kamu Bisa Mengubah Sesuai Keinginan</p>
+                <p class="text-sm">Kamu Bisa Mengubah Sesuai Keinginan</p>
+                <i class="text-sm d-xl-none d-block mt-2">Hanya berfungsi di tampilan desktop</i>
+
                 <!-- Navbar Fixed -->
 
                 <hr class="horizontal dark my-sm-4">

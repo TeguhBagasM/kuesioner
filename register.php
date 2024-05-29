@@ -1,25 +1,11 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/Pesawat.png">
-  <link rel="icon" type="image/png" href="Assets_Tamplate/img/Pesawat.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/logo.jpeg">
+  <link rel="icon" type="image/png" href="Assets_Tamplate/img/logo.jpeg">
   <title>
     Daftar
   </title>
@@ -37,13 +23,13 @@
 
 <body class="">
   <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('Assets_Tamplate/img/reg.png'); background-position: top;">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('Assets_Tamplate/img/stmik.jpg'); background-position: top;">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5 text-center mx-auto">
             <h1 class="text-white mb-2 mt-5">Selamat Datang!</h1>
-            <p class="text-lead text-white">Silakan Daftarkan Nama dan Nik Anda</p>
+            <p class="text-lead text-white">Silakan Daftarkan NIM dan Nama Anda</p>
           </div>
         </div>
       </div>
@@ -59,7 +45,7 @@
               <div class="card-body">
                 <form role="form" method="post" action="proses_register.php">
                   <div class="mb-3">
-                    <input name="nik" required type="text" class="form-control" placeholder="Masukan NIK Anda" aria-label="Email">
+                    <input name="nim" required type="text" class="form-control" placeholder="Masukan NIM Anda" aria-label="Email">
                   </div>
                   <div class="mb-3">
                     <input name="nama_lengkap" required type="text" class="form-control" placeholder="Masukan Nama Lengkap Anda" aria-label="Password">
@@ -83,7 +69,7 @@
           <p class="mb-0 text-secondary">
             Copyright © <script>
               document.write(new Date().getFullYear())
-            </script> Soft by Start Bootstrap Tim. Design By Ananda.
+            </script> Design By Teguh Bagas.
           </p>
         </div>
       </div>

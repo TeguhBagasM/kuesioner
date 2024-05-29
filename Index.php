@@ -1,27 +1,13 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/Pesawat.png">
-  <link rel="icon" type="image/png" href="Assets_Tamplate/img/Pesawat.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="Assets_Tamplate/img/logo.jpeg">
+  <link rel="icon" type="image/png" href="Assets_Tamplate/img/logo.jpeg">
   <title>
-    Aplikasi Latravel
+    Aplikasi Kuesioner
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -51,12 +37,12 @@
               <div class="card card-plain">
                 <div class="card-header pb-0 text-start">
                   <h4 class="font-weight-bolder">Log in</h4>
-                  <p class="mb-0">Selamat Datang Di Aplikasi Latravel<br>Silakan Masukan <b>NIK</b> Dan <b>NAMA</b> Anda</p>
+                  <p class="mb-0">Selamat Datang Di Aplikasi Kuesioner<br>Silakan Masukan <b>NIM</b> Dan <b>NAMA</b> Anda</p>
                 </div>
                 <div class="card-body">
                   <form role="form" method="POST" action="proses_login.php">
                     <div class="mb-3">
-                      <input name="nik" required type="text" class="form-control form-control-lg" placeholder="Masukan Nik Anda" aria-label="Email">
+                      <input name="nim" required type="text" class="form-control form-control-lg" placeholder="Masukan NIM Anda" aria-label="Email">
                     </div>
                     <div class="mb-3">
                       <input name="nama_lengkap" required type="text" class="form-control form-control-lg" placeholder="Masukan Nama Anda" aria-label="Password">
@@ -75,7 +61,7 @@
               </div>
             </div>
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('Assets_Tamplate/img/logo2.png');
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden opacity-9" style="background-image: url('Assets_Tamplate/img/stmik.jpg');
           background-size: cover;">
                 <span class="mask  opacity-6"></span>
               </div>

@@ -1,13 +1,15 @@
 <?php
 session_start();
-$nik        = $_SESSION['nik'];
+$nim        = $_SESSION['nim'];
 $nama_lengkap = $_SESSION['nama_lengkap'];
-$tanggal = $_POST['tanggal'];
-$jam     = $_POST['jam'];
-$lokasi  = $_POST['lokasi'];
-$suhu    = $_POST['suhu'];
+$tanggal = date("Y-m-d");
+$pSatu = $_POST['pSatu'];
+$pDua     = $_POST['pDua'];
+$pTiga     = $_POST['pTiga'];
+$pEmpat    = $_POST['pEmpat'];
+$kritik  = $_POST['kritik'];
 
-$format = "\n$nik|$nama_lengkap|$tanggal|$jam|$lokasi|$suhu";
+$format = "\n$nim|$nama_lengkap|$tanggal|$pSatu|$pDua|$pTiga|$pEmpat|$kritik";
 
 //kita buka file config.txt
 $file = fopen('catatan.txt', 'a');
@@ -18,6 +20,6 @@ fclose($file);
 
 ?>
 <script type="text/javascript">
-    alert('Data Sudah Tersimpan.');
+    alert('Data Berhasil Disimpan.');
     window.location.assign('catatan.php');
 </script>
